@@ -12,8 +12,20 @@ handlers:
 - url: /joyride/.*
   script: joyride.app
 
+- url: /assets
+  static_dir: _site/assets
+
+- url: /(.*)/(.*)
+  static_files: _site/\1/\2/index.html
+  upload: _site/(.*)/(.*)/index.html
+
 - url: /
-  static_dir: _site
+  static_files: _site/index.html
+  upload: _site/index.html
+
+- url: /(.*)
+  static_files: _site/\1
+  upload: _site/.*
 
 skip_files: |
    ^(.*/)?(
@@ -30,6 +42,5 @@ skip_files: |
    (_layouts\/.*)|
    (_plugins\/.*)|
    (_posts\/.*)|
-   (assets\/.*)|
    (static\/.*)|
    )$
