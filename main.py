@@ -143,7 +143,7 @@ settings = {
     "autoescape": None,
 }
 app = tornado.wsgi.WSGIApplication([
-    (r"/", HomeHandler),
+    (r"/test/", HomeHandler),
     (r"/archive", ArchiveHandler),
     (r"/feed", FeedHandler),
     (r"/entry/([^/]+)", EntryHandler),
