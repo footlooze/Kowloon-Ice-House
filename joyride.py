@@ -138,7 +138,7 @@ class BaseHandler(tornado.web.RequestHandler):
         return tornado.web.RequestHandler.render_string(
             self, template_name, users=users, **kwargs)
 
-class DealsHandler(BaseHandler):
+class RidesHandler(BaseHandler):
     def get(self):
         dict=memcache.get('rides')
         if not dict:
@@ -159,9 +159,9 @@ class DealsHandler(BaseHandler):
                 'to_shop' : ride.to_shop,
                 'days_allowed' : ride.days_allowed,
                 'mileages_allowed' : ride.mileages_allowed,
-                'publish_date ' : ride.publish_date,
-                'available_date ' : ride.available_date,
-                'expire_date' : ride.expire_date,
+                'publish_date ' : ride.publish_date.isoformat(),
+                'available_date ' : ride.available_date.isoformat(),
+                'expire_date' : ride.expire_date.isoformat(),
                 'gps' : ride.gps,
                 'baby_seat' : ride.baby_seat,
                 'toll' : ride.toll,
@@ -203,6 +203,6 @@ settings = {
     "autoescape": None,
 }
 app = tornado.wsgi.WSGIApplication([
-    (r"/joyride/rides.json", DealsHandler),
+    (r"/joyride/rides.json", RidesHandler),
     (r"/joyride/scout", ScoutHandler),
 ], **settings)

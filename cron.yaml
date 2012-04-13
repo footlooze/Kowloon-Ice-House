@@ -1,4 +1,4 @@
 cron:
-- description: scout one way rental deals
-  url: /oneway/scout
-  schedule: every 16 hours
+#- description: scout one way rental deals
+#  url: /joyride/scout
+#  schedule: every 16 hours

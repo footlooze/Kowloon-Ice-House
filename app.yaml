@@ -9,11 +9,14 @@ builtins:
 - deferred : on
 
 handlers:
-- url: /joyride/.*
-  script: joyride.app
+- url: /timeframe/.*
+  script: timeframe.app
 
 - url: /assets
   static_dir: _site/assets
+
+- url: /apps
+  static_dir: _site/apps
 
 - url: /(.*)/(.*)
   static_files: _site/\1/\2/index.html
