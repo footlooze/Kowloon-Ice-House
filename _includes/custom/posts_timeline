@@ -1,0 +1,44 @@
+{% comment %}<!--
+Collate_posts helper. Collated posts by year and month.
+Usage:
+  1) assign the 'posts_timeline' variable to a valid array of posts.
+  2) include JB/posts_timeline
+  example:
+    {% assign posts_timeline = site.posts %}
+    {% include JB/posts_timeline %}
+
+  Ordering:
+    Posts are displayed in reverse chronological order.
+    For normal chronological order:
+      1) Change the for loop to this:
+        => 'for post in site.posts reversed'
+      2) Next make sure to change 'post.previous.date' to:
+        => 'post.next.date'
+        
+-->{% endcomment %}
+<section>													<!-- Timeline Start Screen -->
+    <time>2011,11,11</time>									<!-- Timeline Begins Date -->
+    <h2>The Main Timeline Headline</h2>						<!-- Main Headline -->
+    <article>												<!-- Main Text -->
+        <p>The main text goes here. You can have p tags or anything really.</p>
+    </article>
+    <figure>
+        <img src="/assets/images/timetravel.jpg">				<!-- Media, can also be a link to youtube video etc (optional) -->
+    </figure>
+</section>
+
+<ul>
+
+    <!-- Event -->
+    {% for post in posts_timeline  %}
+        <li>
+            <time>{{ post.date | date: "%Y" }},{{ post.date | date: "%m" }},{{ post.date | date: "%e" }}</time>		<!-- Event Date -->
+            <h3>{{ post.title }}</h3>							<!-- Headline -->
+            <article>											<!-- Main Text -->
+                <p>{{ post.content }}</p>
+            </article>
+        </li>
+    <!-- / Event -->
+    {% endfor %}
+</ul>
+{% assign posts_timeline = nil %}

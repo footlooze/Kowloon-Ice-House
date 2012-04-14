@@ -1,0 +1,36 @@
+{% case page.title %}
+{% when "Archive" %}
+	<link href="/assets/css/timeline.css" rel="stylesheet">
+    <style type="text/css">
+        #timeline {
+            height:600px;
+            position:relative;
+            z-index:100;
+            clear:both;
+
+        }
+        #timeline .navigation .timenav .content {
+            padding: 0;
+        }
+        .slider .slider-item .content {
+            box-shadow: 0 1px 2px transparent;
+        }
+        .with-shadow {
+            border: 1px solid #FFF;
+
+            margin-top:5px;
+            -webkit-border-radius: 10px;
+             -moz-border-radius: 10px;
+                  border-radius: 10px;
+
+            -moz-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+                -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.25);
+                box-shadow: 1px 2px 6px rgba(0,0,0,.25);
+        }
+    </style>
+{% endcase %}
+<style type="text/css">
+    #gae {
+        margin-left:10px;
+    }
+</style>
