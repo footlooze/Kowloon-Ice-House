@@ -29,8 +29,8 @@
         }
     </style>
 {% endcase %}
-<style type="text/css">
-    #gae {
-        margin-left:10px;
-    }
-</style>
+    <style type="text/css">
+        #gae {
+            margin-left:10px;
+        }
+    </style>

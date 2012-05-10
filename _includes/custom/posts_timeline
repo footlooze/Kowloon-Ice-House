@@ -17,7 +17,7 @@ Usage:
         
 -->{% endcomment %}
 <section>													<!-- Timeline Start Screen -->
-    <time>2011,11,11</time>									<!-- Timeline Begins Date -->
+    <time>2006,11,22</time>									<!-- Timeline Begins Date -->
     <h2>The Main Timeline Headline</h2>						<!-- Main Headline -->
     <article>												<!-- Main Text -->
         <p>The main text goes here. You can have p tags or anything really.</p>

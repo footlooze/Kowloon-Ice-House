@@ -1,10 +1,20 @@
+	<script type="text/javascript" src="/assets/js/require.js"></script>
 {% case page.title %}
 {% when "Archive" %}
-	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="/assets/js/timeline-min.js"></script>
+	<script>
+	    require(["http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js","/assets/js/timeline-min.js"], function() {
+            $(document).ready(function() {
+                var timeline = new VMM.Timeline();
+                timeline.init();
+            });
+	    });
+	</script>
 {% when "Timeframes" %}
-	<script type="text/javascript" src="/assets/js/require.js"></script>
-	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="/assets/js/underscore-min.js"></script>
-	<script type="text/javascript" src="/assets/js/backbone-min.js"></script>
+	<script>
+	    require(["http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js",
+	            "/assets/js/underscore-min.js",
+	            "/assets/js/backbone-min.js"], function() {
+
+	            });
+	</script>
 {% endcase %}
